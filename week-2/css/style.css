@@ -50,7 +50,7 @@ body {
 }
 
 .section__container {
-    margin: 0 auto;
+    margin: 1.25rem auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
