@@ -7,9 +7,9 @@ function twoSum(nums, target) {
         }
 
         for (let j = i; j <nums.length; j++) {
-            // If sum of two numbers meet target, then return.
+            // If sum of two numbers meet target, then return "index".
             if ((nums[i] + nums[j]) === target) {
-                return [nums[i], nums[j]]
+                return [i, j];
             }
         }
     }
