@@ -41,7 +41,7 @@ body {
 #greeting {
     background-color: #b6d6e5;
     text-align: center;
-    padding: 3em 0;
+    padding: 2.5em 0;
 }
 
 #section__title {
@@ -53,22 +53,28 @@ body {
     margin: 1.25rem auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: stretch;
+    align-items: stretch;
     gap: 1rem;
     width: 1200px;
     box-sizing: border-box;
 }
 
-.hide {
-    display: none;
+.hide, .hide div {
+    opacity: 0 !important;
+    height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#section__more {
+    transition: all 1s ease-in;
 }
 
 .section__container__item {
-    padding-top: 1rem;
+    padding: 50px 0;
     text-align: center;
     background-color: #667c87;
-    width: calc(600px - 0.5rem);
-    height: 150px;
 }
 
 #section__bottom {
@@ -76,7 +82,7 @@ body {
 }
 
 #section__bottom button {
-    margin: 1.25rem 0;
+    margin: 0.5rem 0;
     height: 2rem;
     background-color: #b6d6e5;
     border: 0;
@@ -102,19 +108,20 @@ body {
         /* height: 0; */
         /* overflow: hidden; */
         flex-direction: column;
+        /* flex-wrap: wrap; */
         z-index: 0;
         background-color: white;
-        transition: all 0.5s ease-in;
         position: fixed;
         height: 100vh;
         top: 0;
         right: 0;
         gap: 20px;
         padding: 15px 60px 15px 15px;
+        transition: all 1s ease-in-out;
     }
 
     .menu-sm-hide {
-        display: none !important;
+        opacity: 0;
     }
 
     #nav__icon {
