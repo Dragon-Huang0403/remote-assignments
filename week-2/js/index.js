@@ -12,7 +12,7 @@ document.querySelector("#nav__items").addEventListener("click", function(e){
     // Ensure click on the nav__icon or close-bun
     if (element.parentNode.id === "nav__icon" || element.parentNode.parentNode.id === "nav__icon" || element.id === "nav__list__close-btn"){
         // Toggle the class to Show/Close menu.
-        document.querySelector("#nav__list").classList.toggle("menu-sm-hide")
+        document.querySelector("#nav__list").classList.toggle("menu-sm-show")
     }
 })
 

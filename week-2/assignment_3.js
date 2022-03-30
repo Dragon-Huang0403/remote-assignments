@@ -9,7 +9,9 @@ function avg(data) {
     }
     // Average the price
     result /= size;
-    // Output result
+    // round result to second decimal
+    result = Math.round(result * 100) /100;
+
     console.log(result);
     return result;
 }
@@ -21,7 +23,7 @@ avg({
     products: [
         {
             name: "Product 1",
-            price: 100
+            price: 101
         },
         {
             name: "Product 2",
