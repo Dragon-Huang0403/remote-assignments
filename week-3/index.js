@@ -16,12 +16,12 @@ app.get("/getData", (req, res) => {
     const query = req.query;
 
     // Ensure query is not empty
-    if (query == {}) {
+    if (Object.keys(query).length === 0) {
         return res.send("Lack of Parameter");
     }
     
     // Ensure query.number is positive number
-    if (notPositiveNum(query.number)) {
+    if (negativeNum(query.number)) {
         return res.send("Wrong Parameter");
     }
 
@@ -30,7 +30,7 @@ app.get("/getData", (req, res) => {
     return res.send(result);
 
     // Check if a "str" is a positive number.
-    function notPositiveNum (str) {
+    function negativeNum (str) {
         const num = Number(str);
         return !(num > 0);
     }
