@@ -20,20 +20,16 @@ app.get("/getData", (req, res) => {
         return res.send("Lack of Parameter");
     }
     
-    // Ensure query.number is positive number
-    if (negativeNum(query.number)) {
+    // Ensure query.number is positive integer
+    const num = Number(query.number);
+    if (!Number.isInteger(num) || num <= 0) {
         return res.send("Wrong Parameter");
     }
 
     // Return the result
-    let result = sumSeries(Number(query.number));
+    let result = sumSeries(num);
     return res.send(result);
-
-    // Check if a "str" is a positive number.
-    function negativeNum (str) {
-        const num = Number(str);
-        return !(num > 0);
-    }
+    
 
     // Return string of result of 1 + 2 ... + num
     function sumSeries(num) {
