@@ -37,6 +37,10 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px;
 }
 
+.new-todo__form {
+  flex: 1;
+}
+
 .toggle-all {
   margin-left: 0;
   border: 0;
@@ -53,9 +57,12 @@ ul {
 
 .new-todo {
   border: 0;
-  flex: 1;
   font-size: 24px;
   color: rgb(77, 77, 77);
+  width: 95%;
+}
+.new-todo:focus {
+  outline: 0;
 }
 
 .container-todos {
@@ -97,6 +104,13 @@ ul {
   padding: 16px 0px;
   color: #555;
   margin-left: 10px;
+  max-width: 80%;
+  word-wrap:break-word
+}
+
+.completed {
+  color: #d5d5d5;
+  text-decoration-line: line-through;
 }
 
 .del-todo {
@@ -104,6 +118,7 @@ ul {
   background-color: transparent;
   border: 0;
   width: 50px;
+  cursor: pointer;
 }
 
 .del-todo:hover::after {
@@ -115,7 +130,8 @@ ul {
 .todos-info {
   color: #888;
   font-size: 14px;
-  display: relative;
+  display: flex;
+  justify-content: space-between;
   box-shadow: 
       0 1px 1px rgb(0 0 0 / 20%),
       0 8px 0 -3px #f6f6f6,
@@ -132,7 +148,7 @@ ul {
 
 .todos-filter {
   padding: 12px 0px;
-  margin: 0 112px 0 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -140,11 +156,32 @@ ul {
 
 .todos-filter>li {
   padding: 3px 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
-.filter-selected {
+.todos-filter>li:not(.filter-selected):hover {
+  border: 1px solid rgba(200,50,50, 0.1);
+  border-radius: 5px;
+}
+
+li.filter-selected {
   border: 1px solid rgba(200,50,50, 0.3);
   border-radius: 5px;
+}
+
+.btn-clear-completed {
+  margin-right: 10px;
+  background-color: transparent;
+  border: 0;
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-clear-completed:hover {
+  text-decoration-line:underline;
 }
 
 .footer {
